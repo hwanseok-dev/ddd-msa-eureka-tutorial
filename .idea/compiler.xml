@@ -12,10 +12,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="hwanseok.server.eureka" target="1.5" />
-      <module name="hwanseok.server.ordergroup" target="1.5" />
-      <module name="hwanseok.server.product" target="1.5" />
-      <module name="simple-eureka-group" target="1.5" />
+      <module name="hwanseok.server.eureka" target="11" />
+      <module name="hwanseok.server.ordergroup" target="11" />
+      <module name="hwanseok.server.product" target="11" />
+      <module name="simple-eureka-group" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
