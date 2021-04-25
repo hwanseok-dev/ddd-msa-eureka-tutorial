@@ -5,6 +5,5 @@
     <artifactId>simple-eureka-group</artifactId>
     <version>0.0.1</version>
   </parent>
-  <groupId>io.hwanseok</groupId>
   <artifactId>hwanseok.server.eureka</artifactId>
 </project>
