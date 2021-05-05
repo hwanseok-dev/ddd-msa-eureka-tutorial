@@ -28,7 +28,7 @@ public class SwaggerConfig {
                 .apiInfo(this.apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("me.hwanseok.simplemsaproduct.controller"))
+                        .basePackage("hwanseok.server.product.controller"))
 //                .paths(PathSelectors.ant("/api/**"))
                 .build();
     }
