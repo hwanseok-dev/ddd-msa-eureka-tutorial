@@ -21,5 +21,6 @@
   	<module>hwanseok.server.eureka</module>
   	<module>hwanseok.server.product</module>
   	<module>hwanseok.server.ordergroup</module>
+      <module>hwanseok.server.study</module>
   </modules>
 </project>

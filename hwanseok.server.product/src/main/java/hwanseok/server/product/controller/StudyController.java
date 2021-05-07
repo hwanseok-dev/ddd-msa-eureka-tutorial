@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/api/product", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ProductController {
+@RequestMapping(value = "/api/study", produces = MediaType.APPLICATION_JSON_VALUE)
+public class StudyController {
 
     private final ProductService productService;
 

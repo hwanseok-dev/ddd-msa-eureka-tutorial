@@ -1,0 +1,10 @@
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/config/WebConfig.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/StudyApplication.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/entity/Layer.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/entity/OrganizationLayer.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/config/JpaConfig.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/controller/StudyController.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/controller/HealthCheckController.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/dto/LayerDto.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/dto/OrganizationLayerDto.java
+/Users/hwanseok/dev/github/ddd-msa-eureka-tutorial/hwanseok.server.study/src/main/java/hwanseok/server/study/config/SwaggerConfig.java

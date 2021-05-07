@@ -10,6 +10,7 @@
         <module name="hwanseok.server.ordergroup" />
         <module name="hwanseok.server.eureka" />
         <module name="hwanseok.server.product" />
+        <module name="hwanseok.server.study" />
         <module name="hwanseok.cookbook.test" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="hwanseok.server.eureka" target="1.8" />
       <module name="hwanseok.server.ordergroup" target="1.8" />
       <module name="hwanseok.server.product" target="1.8" />
+      <module name="hwanseok.server.study" target="1.8" />
       <module name="simple-eureka-group" target="8" />
     </bytecodeTargetLevel>
   </component>
@@ -26,6 +28,7 @@
       <module name="hwanseok.server.eureka" options="-parameters" />
       <module name="hwanseok.server.ordergroup" options="-parameters" />
       <module name="hwanseok.server.product" options="-parameters" />
+      <module name="hwanseok.server.study" options="-parameters" />
     </option>
   </component>
 </project>

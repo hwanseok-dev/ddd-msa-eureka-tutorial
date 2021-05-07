@@ -1,0 +1,26 @@
+server:
+  port: 7999
+
+spring:
+  application:
+    name: simple-msa-product
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mydb?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true # 새로 추가된 옵션 schema 가 없는 경우 생성
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jackson:
+#    property-naming-strategy: SNAKE_CASE
+
+logging:
+  level:
+    root: info
+    com.zaxxer.hikari.HikariConfig: debug
+    org.hibernate.SQL: debug
+    hibernate.type.descriptor.sql.BasicBinder: trace
+

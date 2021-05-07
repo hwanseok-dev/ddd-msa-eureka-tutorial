@@ -395,33 +395,33 @@
 
 1. EntityManagerFactory를 통해 EntityManager 생성
 1. EntityManager는 entity의 저장,수정,삭제,조회 등의 작업 수행
-1. entityManager.persist(entity)는 entity를 `영속성 컨텍스트`에 저장
+1. entityManager.persist(hwanseok.server.study.entity)는 entity를 `영속성 컨텍스트`에 저장
 1. entityManager.flush()는 `영속성 컨텍스트`에 저장된 정보를 DB에 반영
     - transaction commit(), JPQL 쿼리 실행시 flush() 자동 호출
 1. 영속성 컨텍스트 장점
-    - 1차 캐시 : entity 조회시 영속성 컨텍스트에 존재하면 바로 return, 아니면 DB 조회 후 return
-    - 동일성 : 항상 같은 entity instance를 return(instance의 주속밧이 같음)
+    - 1차 캐시 : hwanseok.server.study.entity 조회시 영속성 컨텍스트에 존재하면 바로 return, 아니면 DB 조회 후 return
+    - 동일성 : 항상 같은 hwanseok.server.study.entity instance를 return(instance의 주속밧이 같음)
     - 트랜잭션을 지원하는 쓰기 지연(Transactional write-behind): 트랜젝션 커밋 될때까지 내부 쿼리저장소에 모아뒀다가 한번에 실행
     - 변경감지(Dirty Checking): 엔티티의 스냅샷을 유지하면서 엔티티의 변경사항을 체크한다.
     - 지연로딩(Lazy Loading): 연관된 엔티티를 모두 불러오는 것이 아니라, 실제 호출될때 로딩되도록 지원(프록시 객체 사용)
 1. Entity CRUD
     - Create
-        - em.persist(entity)로 영속성 컨텍스트에 저장
+        - em.persist(hwanseok.server.study.entity)로 영속성 컨텍스트에 저장
         - transaction commit 전 메모리에 SQL 유지
         - transaction commit 후 DB에 일괄 반영
     - Read
-        - em.find(entity)로 1차 캐시 조회 후 DB 조회
+        - em.find(hwanseok.server.study.entity)로 1차 캐시 조회 후 DB 조회
         - DB에서 조회된 entity는 영속성 컨텍스트에서 관리
     - Update
-        - 별도의 API가 없음. em.update(entity) 존재하지 않음
-        - entity.setName("newName")등을 통해 entity 정보를 변경
+        - 별도의 API가 없음. em.update(hwanseok.server.study.entity) 존재하지 않음
+        - hwanseok.server.study.entity.setName("newName")등을 통해 hwanseok.server.study.entity 정보를 변경
         - transaction commit시 변경감지를 통해 수정된 entity의 UPDATE SQL 생성 후 반영
     - Delete 
-        - em.remove(entity)
+        - em.remove(hwanseok.server.study.entity)
         - 영속성 컨텍스트에서 바로 삭제
         - transaction commit 될때가지 쓰기 지연
 1. em.detach()?
-    - em.detach(entity)
+    - em.detach(hwanseok.server.study.entity)
     - entity를 준영속 상태로 변경
     - 영속성 컨텍스트에서 저장되었다가 분리된 상태
     - 영속성 컨텍스트에서 지운 상태
@@ -430,7 +430,7 @@
 1. `Transaction-scoped Persistence context`과 `Extended Persistence context`
     - 차이점 : [참조][5]
 1. self join 사용할 때 주의점
-    - 연관 엔티티가 DB에 등록된 키값을 가지고 있다면 detached entity passed to persist Exception이 발생한다?
+    - 연관 엔티티가 DB에 등록된 키값을 가지고 있다면 detached hwanseok.server.study.entity passed to persist Exception이 발생한다?
     - 아직 이해할 수 없는 내용 [참조][6]
 
 
