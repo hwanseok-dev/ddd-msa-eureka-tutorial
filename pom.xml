@@ -22,5 +22,6 @@
   	<module>hwanseok.server.product</module>
   	<module>hwanseok.server.ordergroup</module>
       <module>hwanseok.server.study</module>
+      <module>hwanseok.java.jwt</module>
   </modules>
 </project>

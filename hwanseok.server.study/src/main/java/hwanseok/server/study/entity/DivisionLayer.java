@@ -15,14 +15,16 @@ public class DivisionLayer extends Layer {
     @JoinTable(name = "V2_LayerClosure",
             joinColumns = @JoinColumn(name = "Child"),
             inverseJoinColumns = @JoinColumn(name = "Parent"))
-    @JsonIgnoreProperties("child")
+    @JsonIgnoreProperties({"parent", "child"})
+    @Transient
     private OrganizationLayer parent;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "V2_LayerClosure",
             joinColumns = @JoinColumn(name = "Parent"),
             inverseJoinColumns = @JoinColumn(name = "Child"))
-    @JsonIgnoreProperties("parent")
+    @JsonIgnoreProperties({"parent", "child"})
+    @Transient
     private List<GroupLayer> child;
 
     public DivisionLayer() {

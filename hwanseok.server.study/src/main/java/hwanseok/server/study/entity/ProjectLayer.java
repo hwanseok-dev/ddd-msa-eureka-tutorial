@@ -15,7 +15,8 @@ public class ProjectLayer extends Layer {
     @JoinTable(name = "V2_LayerClosure",
             joinColumns = @JoinColumn(name = "Child"),
             inverseJoinColumns = @JoinColumn(name = "Parent"))
-    @JsonIgnoreProperties("child")
+    @JsonIgnoreProperties({"parent", "child"})
+    @Transient
     private GroupLayer parent;
 
     public ProjectLayer() {

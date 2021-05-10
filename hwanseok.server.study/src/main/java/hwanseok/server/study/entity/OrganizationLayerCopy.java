@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @DiscriminatorValue("ORGANIZATION")
-public class OrganizationLayer extends Layer {
+public class OrganizationLayerCopy extends Layer {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "V2_LayerClosure",
@@ -19,15 +19,15 @@ public class OrganizationLayer extends Layer {
     @JsonIgnoreProperties("parent")
     private List<DivisionLayer> child;
 
-    public OrganizationLayer(){
+    public OrganizationLayerCopy(){
     }
 
-    public OrganizationLayer(String uuid) {
+    public OrganizationLayerCopy(String uuid) {
         super(uuid);
     }
 
-    public static OrganizationLayer create(String name, String description) {
-        OrganizationLayer organization = new OrganizationLayer(UUIDUtil.generate());
+    public static OrganizationLayerCopy create(String name, String description) {
+        OrganizationLayerCopy organization = new OrganizationLayerCopy(UUIDUtil.generate());
         organization.setName(name);
         organization.setDescription(description);
         return organization;

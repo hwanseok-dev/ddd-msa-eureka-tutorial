@@ -10,12 +10,14 @@
         <module name="hwanseok.server.ordergroup" />
         <module name="hwanseok.server.eureka" />
         <module name="hwanseok.server.product" />
+        <module name="hwanseok.java.jwt" />
         <module name="hwanseok.server.study" />
         <module name="hwanseok.cookbook.test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hwanseok.cookbook.test" target="8" />
+      <module name="hwanseok.java.jwt" target="8" />
       <module name="hwanseok.server.eureka" target="1.8" />
       <module name="hwanseok.server.ordergroup" target="1.8" />
       <module name="hwanseok.server.product" target="1.8" />

@@ -16,7 +16,7 @@ public class OrganizationLayer extends Layer {
     @JoinTable(name = "V2_LayerClosure",
             joinColumns = @JoinColumn(name = "Parent"),
             inverseJoinColumns = @JoinColumn(name = "Child"))
-    @JsonIgnoreProperties("OrganizationLayer")
+    @JsonIgnoreProperties("parent")
     private List<DivisionLayer> child;
 
     public OrganizationLayer(){

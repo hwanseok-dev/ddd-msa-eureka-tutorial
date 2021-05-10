@@ -49,8 +49,8 @@ public class DivisionService {
            DivisionLayer division = divOptional.get();
            organization.addChild(division);
            division.setParent(organization);
-           divisionRepository.save(division);
-           organizationRepository.save(organization);
+//           divisionRepository.saveAndFlush(division);
+           organizationRepository.saveAndFlush(organization);
            return ResponseEntity
                    .status(HttpStatus.OK)
                    .body(division);
