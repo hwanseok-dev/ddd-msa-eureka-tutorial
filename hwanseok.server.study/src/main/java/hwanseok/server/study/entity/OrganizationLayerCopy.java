@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@DiscriminatorValue("ORGANIZATION")
+@DiscriminatorValue("ORGANIZATION_COPY")
 public class OrganizationLayerCopy extends Layer {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

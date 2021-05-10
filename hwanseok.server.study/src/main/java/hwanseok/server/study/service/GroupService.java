@@ -50,7 +50,7 @@ public class GroupService {
            GroupLayer group = optional.get();
            DivisionLayer division = parentOptional.get();
            group.setParent(division);
-           division.addChild(group);
+//           division.addChild(group);
            divisionRepository.save(division);
            groupRepository.save(group);
            return ResponseEntity

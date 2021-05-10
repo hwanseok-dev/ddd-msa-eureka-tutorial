@@ -1,5 +1,6 @@
 package hwanseok.server.study.controller;
 
+import hwanseok.server.study.dto.LayerDto;
 import hwanseok.server.study.entity.DivisionLayer;
 import hwanseok.server.study.entity.GroupLayer;
 import hwanseok.server.study.entity.OrganizationLayer;
@@ -30,12 +31,18 @@ public class LayerController {
     @Autowired
     private ProjectService projectService;
 
+
+
     /**************************
      * Organization
+     * 생성
+     * 조회
+     * 수정 TODO
+     * 삭제 TODO
      *************************/
 
     @PostMapping("/organization/create")
-    public ResponseEntity<OrganizationLayer> createOrganization(@RequestBody OrganizationLayer dto){
+    public ResponseEntity<OrganizationLayer> createOrganization(@RequestBody LayerDto dto){
         return organizationService.create(dto.getName(), dto.getDescription());
     }
 
@@ -46,22 +53,37 @@ public class LayerController {
 
     /**************************
      * Division
+     * 생성
+     * 생성 및 등록
+     * 등록
+     * 조회
+     * 수정 TODO
+     * 삭제 TODO
      *************************/
 
-    @PostMapping("/division/create")
-    public ResponseEntity<DivisionLayer> createDivision(@RequestBody DivisionLayer dto){
+    @PostMapping("/DivisionLayer/create")
+    public ResponseEntity<DivisionLayer> createDivision(@RequestBody LayerDto dto){
         return divisionService.create(dto.getName(), dto.getDescription());
     }
 
-    @GetMapping("/division/read")
-    public ResponseEntity<DivisionLayer> readDivision(@RequestParam("uuid") String uuid){
-        return divisionService.findByUuid(uuid);
+    @PostMapping("/DivisionLayer/create/register")
+    public ResponseEntity<OrganizationLayer> createRegisterDivision(@RequestBody LayerDto dto){
+        return divisionService.createRegister(dto.getName(), dto.getDescription(), dto.getParentUuid());
     }
 
-    @PostMapping("/division/register")
-    public ResponseEntity<DivisionLayer> registerDivision(@RequestBody DivisionLayer dto){
-        return divisionService.register(dto.getUuid(), dto.getParent().getUuid());
+    @PostMapping("/DivisionLayer/register")
+    public ResponseEntity<OrganizationLayer> registerDivision(@RequestBody LayerDto dto){
+        return divisionService.register(dto.getUuid(), dto.getParentUuid());
     }
+
+    @GetMapping("/division/read")
+    public ResponseEntity<DivisionLayer> readDivision(@RequestBody LayerDto dto){
+        return divisionService.findByUuid(dto.getUuid());
+    }
+
+
+
+
 
     /**************************
      * Group

@@ -13,10 +13,16 @@ import java.util.List;
 public class OrganizationLayer extends Layer {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "V2_LayerClosure",
-            joinColumns = @JoinColumn(name = "Parent"),
-            inverseJoinColumns = @JoinColumn(name = "Child"))
-    @JsonIgnoreProperties("parent")
+    @JoinTable
+            (name = "V2_LayerClosure",
+            joinColumns = @JoinColumn(
+                    name = "Parent",
+                    referencedColumnName = "Id"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "Child",
+                    referencedColumnName = "Id"
+            ))
     private List<DivisionLayer> child;
 
     public OrganizationLayer(){
