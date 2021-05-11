@@ -77,8 +77,8 @@ public class LayerController {
     }
 
     @GetMapping("/division/read")
-    public ResponseEntity<DivisionLayer> readDivision(@RequestBody LayerDto dto){
-        return divisionService.findByUuid(dto.getUuid());
+    public ResponseEntity<DivisionLayer> readDivision(@RequestParam("uuid") String uuid){
+        return divisionService.findByUuid(uuid);
     }
 
 

@@ -2,6 +2,7 @@ package hwanseok.server.study.repository;
 
 import hwanseok.server.study.entity.OrganizationLayer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.swing.text.html.Option;

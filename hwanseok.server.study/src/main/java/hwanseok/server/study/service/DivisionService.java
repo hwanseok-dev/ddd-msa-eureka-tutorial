@@ -75,6 +75,7 @@ public class DivisionService {
            OrganizationLayer parent = parentOptional.get();
            DivisionLayer me = meOptional.get();
            parent.addChild(me);
+
            Optional<LayerClosure> closureOptional = closureRepository.findByParentAndChild(parent.getId(), me.getId());
            if(closureOptional.isPresent()){
                throw new DivisionRegisterException();

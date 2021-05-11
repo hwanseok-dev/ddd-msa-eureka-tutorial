@@ -23,6 +23,7 @@ public class OrganizationLayer extends Layer {
                     name = "Child",
                     referencedColumnName = "Id"
             ))
+    @JsonIgnoreProperties(value = "parent")
     private List<DivisionLayer> child;
 
     public OrganizationLayer(){

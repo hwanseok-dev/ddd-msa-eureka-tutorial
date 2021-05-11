@@ -11,10 +11,19 @@ import java.util.List;
 @DiscriminatorValue("DIVISION")
 public class DivisionLayer extends Layer {
 
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JsonIgnoreProperties({"parent", "child"})
-//    @Transient
-//    private OrganizationLayer parent;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable
+            (name = "V2_LayerClosure",
+                    joinColumns = @JoinColumn(
+                            name = "Child",
+                            referencedColumnName = "Id"
+                    ),
+                    inverseJoinColumns = @JoinColumn(
+                            name = "Parent",
+                            referencedColumnName = "Id"
+                    ))
+    @JsonIgnoreProperties(value = "child")
+    private OrganizationLayer parent;
 
     public DivisionLayer() {
     }
@@ -30,12 +39,12 @@ public class DivisionLayer extends Layer {
         return division;
     }
 
-//    public OrganizationLayer getParent() {
-//        return parent;
-//    }
-//
-//    public void setParent(OrganizationLayer parent) {
-//        this.parent = parent;
-//    }
+    public OrganizationLayer getParent() {
+        return parent;
+    }
+
+    public void setParent(OrganizationLayer parent) {
+        this.parent = parent;
+    }
 
 }

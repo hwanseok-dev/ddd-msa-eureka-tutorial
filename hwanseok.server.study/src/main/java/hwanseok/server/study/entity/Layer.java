@@ -20,7 +20,7 @@ public abstract class Layer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    @JsonIgnore
+//    @JsonIgnore
     private Long id;
 
     @CreatedDate
