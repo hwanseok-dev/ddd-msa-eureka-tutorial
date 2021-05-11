@@ -25,6 +25,20 @@ public class DivisionLayer extends Layer {
     @JsonIgnoreProperties(value = "child")
     private OrganizationLayer parent;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable
+            (name = "V2_LayerClosure",
+                    joinColumns = @JoinColumn(
+                            name = "Parent",
+                            referencedColumnName = "Id"
+                    ),
+                    inverseJoinColumns = @JoinColumn(
+                            name = "Child",
+                            referencedColumnName = "Id"
+                    ))
+    @JsonIgnoreProperties(value = "parent")
+    private List<GroupLayer> child;
+
     public DivisionLayer() {
     }
 
@@ -47,4 +61,18 @@ public class DivisionLayer extends Layer {
         this.parent = parent;
     }
 
+    public List<GroupLayer> getChild() {
+        return child;
+    }
+
+    public void setChild(List<GroupLayer> child) {
+        this.child = child;
+    }
+
+    public void addChild(GroupLayer child) {
+        if (this.child == null) {
+            this.child = new ArrayList<GroupLayer>();
+        }
+        this.child.add(child);
+    }
 }

@@ -61,17 +61,17 @@ public class LayerController {
      * 삭제 TODO
      *************************/
 
-    @PostMapping("/DivisionLayer/create")
+    @PostMapping("/division/create")
     public ResponseEntity<DivisionLayer> createDivision(@RequestBody LayerDto dto){
         return divisionService.create(dto.getName(), dto.getDescription());
     }
 
-    @PostMapping("/DivisionLayer/create/register")
+    @PostMapping("/division/create/register")
     public ResponseEntity<OrganizationLayer> createRegisterDivision(@RequestBody LayerDto dto){
         return divisionService.createRegister(dto.getName(), dto.getDescription(), dto.getParentUuid());
     }
 
-    @PostMapping("/DivisionLayer/register")
+    @PostMapping("/division/register")
     public ResponseEntity<OrganizationLayer> registerDivision(@RequestBody LayerDto dto){
         return divisionService.register(dto.getUuid(), dto.getParentUuid());
     }
@@ -82,15 +82,12 @@ public class LayerController {
     }
 
 
-
-
-
     /**************************
      * Group
      *************************/
 
     @PostMapping("/group/create")
-    public ResponseEntity<GroupLayer> createGroup(@RequestBody GroupLayer dto){
+    public ResponseEntity<GroupLayer> createGroup(@RequestBody LayerDto dto){
         return groupService.create(dto.getName(), dto.getDescription());
     }
 
@@ -100,8 +97,8 @@ public class LayerController {
     }
 
     @PostMapping("/group/register")
-    public ResponseEntity<GroupLayer> registerGroup(@RequestBody GroupLayer dto){
-        return groupService.register(dto.getUuid(), dto.getParent().getUuid());
+    public ResponseEntity<DivisionLayer> registerGroup(@RequestBody LayerDto dto){
+        return groupService.register(dto.getUuid(), dto.getParentUuid());
     }
 
     /**************************

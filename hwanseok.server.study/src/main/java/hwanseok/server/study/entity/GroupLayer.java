@@ -11,21 +11,19 @@ import java.util.List;
 @DiscriminatorValue("GROUP")
 public class GroupLayer extends Layer {
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "V2_LayerClosure",
-            joinColumns = @JoinColumn(name = "Child"),
-            inverseJoinColumns = @JoinColumn(name = "Parent"))
-    @JsonIgnoreProperties({"parent", "child"})
-    @Transient
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable
+            (name = "V2_LayerClosure",
+                    joinColumns = @JoinColumn(
+                            name = "Child",
+                            referencedColumnName = "Id"
+                    ),
+                    inverseJoinColumns = @JoinColumn(
+                            name = "Parent",
+                            referencedColumnName = "Id"
+                    ))
+    @JsonIgnoreProperties(value = "child")
     private DivisionLayer parent;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "V2_LayerClosure",
-            joinColumns = @JoinColumn(name = "Parent"),
-            inverseJoinColumns = @JoinColumn(name = "Child"))
-    @JsonIgnoreProperties({"parent", "child"})
-    @Transient
-    private List<ProjectLayer> child;
 
     public GroupLayer() {
     }
@@ -49,14 +47,14 @@ public class GroupLayer extends Layer {
         this.parent = parent;
     }
 
-    public void setChild(List<ProjectLayer> child) {
-        this.child = child;
-    }
-
-    public void addChild(ProjectLayer child) {
-        if (this.child == null) {
-            this.child = new ArrayList<ProjectLayer>();
-        }
-        this.child.add(child);
-    }
+//    public void setChild(List<ProjectLayer> child) {
+//        this.child = child;
+//    }
+//
+//    public void addChild(ProjectLayer child) {
+//        if (this.child == null) {
+//            this.child = new ArrayList<ProjectLayer>();
+//        }
+//        this.child.add(child);
+//    }
 }

@@ -47,7 +47,7 @@ public class ProjectService {
            ProjectLayer project = optional.get();
            GroupLayer group = parentOptional.get();
            project.setParent(group);
-           group.addChild(project);
+//           group.addChild(project);
            projectRepository.save(project);
            groupRepository.save(group);
            return ResponseEntity
