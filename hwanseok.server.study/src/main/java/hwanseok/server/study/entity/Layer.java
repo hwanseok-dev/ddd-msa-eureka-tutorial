@@ -43,18 +43,6 @@ public abstract class Layer {
     @Column(name = "UHash", nullable = false)
     private Long uhash;
 
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(name = "V2_LayerClosure",
-//            joinColumns = @JoinColumn(name = "Child"),
-//            inverseJoinColumns = @JoinColumn(name = "Parent"))
-//    private Layer parent;
-
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(name = "V2_LayerClosure",
-//            joinColumns = @JoinColumn(name = "Parent"),
-//            inverseJoinColumns = @JoinColumn(name = "Child"))
-//    private List<Layer> child;
-
     public Layer() {
     }
 
@@ -110,29 +98,6 @@ public abstract class Layer {
     public void setUhash(Long uhash) {
         this.uhash = uhash;
     }
-
-//    public Layer getParent() {
-//        return parent;
-//    }
-//
-//    public void setParent(Layer parent) {
-//        this.parent = parent;
-//    }
-
-//    public List<Layer> getChild() {
-//        return child;
-//    }
-//
-//    public void setChild(List<Layer> child) {
-//        this.child = child;
-//    }
-//
-//    public void addChild(Layer child) {
-//        if (this.child == null) {
-//            this.child = new ArrayList<Layer>();
-//        }
-//        this.child.add(child);
-//    }
 
     public Date getCreateTime() {
         return createTime;

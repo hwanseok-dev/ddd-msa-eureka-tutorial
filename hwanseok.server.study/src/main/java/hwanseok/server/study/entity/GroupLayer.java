@@ -47,14 +47,4 @@ public class GroupLayer extends Layer {
         this.parent = parent;
     }
 
-//    public void setChild(List<ProjectLayer> child) {
-//        this.child = child;
-//    }
-//
-//    public void addChild(ProjectLayer child) {
-//        if (this.child == null) {
-//            this.child = new ArrayList<ProjectLayer>();
-//        }
-//        this.child.add(child);
-//    }
 }
